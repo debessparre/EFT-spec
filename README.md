@@ -53,18 +53,18 @@ A blank fit with every possible section would look something like this:
 [Empty Rig slot]
 [Empty Rig slot]
 
+%Subsystem slots%
+[Empty Subsystem slot]
+[Empty Subsystem slot]
+[Empty Subsystem slot]
+[Empty Subsystem slot]
+
 %Service slots%
 [Empty Service slot]
 [Empty Service slot]
 [Empty Service slot]
 [Empty Service slot]
 [Empty Service slot]
-
-%Subsystem slots%
-[Empty Subsystem slot]
-[Empty Subsystem slot]
-[Empty Subsystem slot]
-[Empty Subsystem slot]
 
 %Drone bay%
 
@@ -191,7 +191,7 @@ The general format is as follows:
 2. Sections of slotted items
    1. Items in slots have no quantity by MAY have charges.
    2. Charges are separated from the item name by a comma, and also do not have a quantity.
-   3. Each slotted section is separated by a single blank line, and they are in the following order, if present: Low, Med, High, Rig, Service, Subsystem.
+   3. Each slotted section is separated by a single blank line, and they are in the following order, if present: Low, Med, High, Rig, Subsystem, Service.
    4. If a slot is not filled, it is replaced with the text `[Empty SECTION slot]`, where `SECTION` is the name of the section as given in 3.
 3. Sections of items in bays
    1. Items in bays always have a quantity.
