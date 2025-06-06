@@ -325,6 +325,7 @@ EVE's parser is incredibly permissive. A few notes about it:
    2. Note that this does not apply to drones or fighters, which are always parsed as being in their appropriate bay (even if it dosn't exist on that ship).
 6. Charges can be listed after a comma, but go to the cargohold.
    1. They are also assumed to fill the module's capacity, as they do not have a quantity. `Expanded Cargohold II, Nova Rage Rocket` will parse fine and give you `0x Nova Rage Rocket` in the fit.
+7. The `[Empty X slot]` lines are not required, and if present will simply be ignored.
 
 ## Reasoning/FAQs
 ### Why change the EFT format?
