@@ -334,3 +334,6 @@ The EFT format is a haphazard format with no source of truth and unsupported ext
 
 ### Okay, why not a new format then?
 It is also the almost universal format for EVE fits, supported by any tool that supports fits in any way. EVE supports it with import and export via clipboard, and it's both human readable and human writable. If you are not parsing it into a fit (as a shopping list, for example) it is trivial to parse.
+
+### What's next?
+I'd like to get some implementations of this in different languages, as example/reference libraries. After some time and any concerns raised by the community have been addressed, I'll freeze this and will reach out to some of the larger third party projects about supporting this as their new output format (and parsing it, of course).
