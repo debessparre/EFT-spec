@@ -1,4 +1,4 @@
-# EFT Spec
+# EFT with Headers (EFTH)
 This document contains a proposal for modifications to the EFT format. It is intended to be backwards compatible, at least as functional as the current spec, and to be parsed by the EVE parser with no code changes by CCP. Comments , suggestions, and questions are welcome, as are example implementations.
 
 Notes about the current format, the EVE parser, and the reasoning behind this all follow the proposal.
