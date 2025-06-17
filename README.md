@@ -1,14 +1,17 @@
 # EFT with Headers (EFTH)
 This document contains a proposal for modifications to the EFT format. It is intended to be backwards compatible, at least as functional as the current spec, and to be parsed by the EVE parser with no code changes by CCP. Comments , suggestions, and questions are welcome, as are example implementations.
 
-Notes about the current format, the EVE parser, and the reasoning behind this all follow the proposal.
+Notes about the current format, the EVE parser, Pyfa extensions to the format, and the reasoning behind this all follow the proposal.
 
 ## The Proposal
 I am proposing a few small changes to the format, all backwards compatible with EVE, and _nearly_ so with Pyfa's output. They disambiguate and formalize things and improve compatability with the EVE parser.
 1. Section headers, surrounded by `%`, as in `%High slots%`. This removes ambiguity about items in the various bays, and makes parsing odd edge cases like freighters easier.
-2. New sections `%Implants%` and `%Boosters%` to follow the cargo bay, for items that apply to the character flying the ship.
+2. New sections `%Implants%` and `%Boosters%` to follow the cargo hold, for items that apply to the character flying the ship.
+   1. Tools may parse everything after the `% Cargo hold %` section (up to the `% Mutated Modules %` section) as part of the cargo hold. Any specialized hold (such as the Ammo Hold of the Hoarder) should thus be listed after the `% Cargo hold %` section.
+   2. As new holds are added regularly, this format does not attempt to exhaustively list or enumerate them
+      1. If they are listed, their names should be normalized to `X Hold` and not "bay" or "hangar", regardless of how it is listed in game/in the SDE/ESI.
 3. Abyssal modules to follow charges, if any, with a comma and a space and then the index number.
-   1. The details should follow after all other sections and a format header, with all details on a single line, format below.
+   1. The details should follow after all other sections and a format header, with all details on a single line (format example follows).
 4. Offline modules to be marked as `/offline`
    1. This follows charges and abyssal mutation notation, if any.
    2. Marking modules as `/overheated` would not be accepted by the EVE parser, but is a reasonable extension that third-party devs could support.
@@ -71,7 +74,7 @@ A blank fit with every possible section would look something like this:
 
 %Fighter bay%
 
-%Cargo bay%
+%Cargo hold%
 
 %Implants%
 
@@ -122,7 +125,7 @@ Loki Propulsion - Intercalated Nanofibers
 Warrior II x2
 Hammerhead II x3
 
-%Cargo bay%
+%Cargo hold%
 Navy Cap Booster 400 x5
 
 %Implants%
@@ -135,7 +138,7 @@ Standard Blue Pill Booster
 Agency 'Pyrolancea' DB9 Dose IV
 
 %Mutated modules%
-1; Glorified Decayed Medium Shield Extender Mutaplasmid; capacityBonus 1060.0, cpu 37.0, power 28.0, signatureRadiusAdd 6.8
+1; Glorified Decayed Medium Shield Extender Mutaplasmid; capacityBonus 1061.205, cpu 37.733, power 28.19, signatureRadiusAdd 6.552
 ```
 
 ```EFT
@@ -178,7 +181,7 @@ Standup Market Hub I
 Standup Einherji II x9
 Standup Einherji II x9
 
-%Cargo bay%
+%Cargo hold%
 Standup XL Cruise Missile x1
 Standup Cruise Missile x2
 ```
