@@ -186,8 +186,10 @@ Standup XL Cruise Missile x1
 Standup Cruise Missile x2
 ```
 
-## Current spec
-The current spec of EFT has, as noted, no central source of truth. As a practical matter, EVE and Pyfa define it. EVE's importer is incredibly permissive, as is Pyfa's.
+## Existing EFT Spec
+This section provides the existing EFT spec, such as it is, as a reference for the difference between EFT and EFTH.
+
+The current spec of EFT has, as noted, no central source of truth. As a practical matter, EVE and Pyfa define it. EVE's importer is incredibly permissive, as is Pyfa's, but they export in a fairly regimented way.
 
 ### General format
 The general format is as follows:
