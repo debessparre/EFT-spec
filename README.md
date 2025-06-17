@@ -7,7 +7,7 @@ Notes about the current format, the EVE parser, Pyfa extensions to the format, a
 I am proposing a few small changes to the format, all backwards compatible with EVE, and _nearly_ so with Pyfa's output. They disambiguate and formalize things and improve compatability with the EVE parser.
 1. Section headers, surrounded by `%`, as in `%High slots%`. This removes ambiguity about items in the various bays, and makes parsing odd edge cases like freighters easier.
 2. New sections `%Implants%` and `%Boosters%` to follow the cargo hold, for items that apply to the character flying the ship.
-   1. Tools may parse everything after the `% Cargo Hold %` section (up to the `% Mutated Modules %` section) as part of the cargo hold. Any specialized hold (such as the Ammo Hold of the Hoarder) should thus be listed after the `% Cargo Hold %` section.
+   1. Tools may parse everything after the `% Cargo hold %` section (up to the `% Mutated Modules %` section) as part of the cargo hold. Any specialized hold (such as the Ammo Hold of the Hoarder) should thus be listed after the `% Cargo hold %` section.
    2. As new holds are added regularly, this format does not attempt to exhaustively list or enumerate them
       1. If they are listed, their names should be normalized to `X Hold` and not "bay" or "hangar", regardless of how it is listed in game/in the SDE/ESI.
 3. Abyssal modules to follow charges, if any, with a comma and a space and then the index number.
@@ -74,7 +74,7 @@ A blank fit with every possible section would look something like this:
 
 %Fighter bay%
 
-%Cargo Hold%
+%Cargo hold%
 
 %Implants%
 
@@ -125,7 +125,7 @@ Loki Propulsion - Intercalated Nanofibers
 Warrior II x2
 Hammerhead II x3
 
-%Cargo Hold%
+%Cargo hold%
 Navy Cap Booster 400 x5
 
 %Implants%
@@ -181,7 +181,7 @@ Standup Market Hub I
 Standup Einherji II x9
 Standup Einherji II x9
 
-%Cargo Hold%
+%Cargo hold%
 Standup XL Cruise Missile x1
 Standup Cruise Missile x2
 ```
