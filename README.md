@@ -14,7 +14,7 @@ I am proposing a few small changes to the format, all backwards compatible with 
    1. The details should follow after all other sections and a format header, with all details on a single line (format example follows).
 4. Offline modules to be marked as `/offline`
    1. This follows charges and abyssal mutation notation, if any.
-   2. Marking modules as `/overheated` would not be accepted by the EVE parser, but is a reasonable extension that third-party devs could support.
+   2. Marking modules as `/overheated` would not be accepted by the EVE parser, unfortunately. Extending the format to support it would thus be a regression, until and unless CCP announces support for it.
 5. Fitting tools should preserve slot order, including empty slots.
 
 
